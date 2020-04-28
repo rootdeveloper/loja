@@ -1,0 +1,8 @@
+br\com\loja\data\MemberRepository.class
+br\com\loja\controller\MemberController.class
+br\com\loja\data\MemberListProducer.class
+br\com\loja\model\Member.class
+br\com\loja\service\MemberRegistration.class
+br\com\loja\rest\JaxRsActivator.class
+br\com\loja\util\Resources.class
+br\com\loja\rest\MemberResourceRESTService.class

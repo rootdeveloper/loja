@@ -1,0 +1,15 @@
+# Created at 2020-04-27T21:57:37.572
+WARNING: An illegal reflective access operation has occurred
+
+# Created at 2020-04-27T21:57:37.573
+WARNING: Illegal reflective access by org.wildfly.security.manager.GetAccessibleDeclaredFieldAction (file:/C:/Users/Daniel/.m2/repository/org/wildfly/security/wildfly-elytron/1.1.0.Final/wildfly-elytron-1.1.0.Final.jar) to field java.security.AccessControlContext.context
+
+# Created at 2020-04-27T21:57:37.573
+WARNING: Please consider reporting this to the maintainers of org.wildfly.security.manager.GetAccessibleDeclaredFieldAction
+
+# Created at 2020-04-27T21:57:37.574
+WARNING: Use --illegal-access=warn to enable warnings of further illegal reflective access operations
+
+# Created at 2020-04-27T21:57:37.575
+WARNING: All illegal access operations will be denied in a future release
+
