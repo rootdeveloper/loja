@@ -1,1 +1,4 @@
+br\com\loja\test\TestUtil.class
 br\com\loja\test\MemberRegistrationTest.class
+br\com\loja\test\TestSuite.class
+br\com\loja\test\AbstractTest.class

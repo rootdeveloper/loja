@@ -8,8 +8,8 @@
 	<packaging>war</packaging>
 
 	<properties>
-		<maven.compiler.target>1.10</maven.compiler.target>
-		<maven.compiler.source>1.10</maven.compiler.source>
+		<maven.compiler.target>14</maven.compiler.target>
+		<maven.compiler.source>14</maven.compiler.source>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 	</properties>
 
@@ -35,7 +35,6 @@
 			<scope>provided</scope>
 		</dependency>
 
-
 		<!-- https://mvnrepository.com/artifact/org.primefaces/primefaces -->
 		<dependency>
 			<groupId>org.primefaces</groupId>
@@ -58,7 +57,7 @@
 			<artifactId>arquillian-junit-container</artifactId>
 			<scope>test</scope>
 		</dependency>
-
+        
 	</dependencies>
 
 	<build>
@@ -91,17 +90,6 @@
 					<scope>test</scope>
 				</dependency>
 			</dependencies>
-			<build>
-				<plugins>
-					<plugin>
-						<artifactId>maven-surefire-plugin</artifactId>
-						<version>2.22.2</version>
-						<configuration>
-							<skip>false</skip>
-						</configuration>
-					</plugin>
-				</plugins>
-			</build>
 		</profile>
 	</profiles>
 
