@@ -13,7 +13,7 @@ import org.junit.runner.RunWith;
 import br.com.loja.model.Member;
 import br.com.loja.service.MemberRegistration;
 
-@RunWith(Arquillian.class)
+//@RunWith(Arquillian.class)
 public class MemberRegistrationTest extends AbstractTest {
 
 

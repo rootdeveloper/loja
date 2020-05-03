@@ -18,6 +18,7 @@ br\com\loja\enums\TipoDocumentoEnum.class
 br\com\loja\model\Usuario.class
 br\com\loja\service\MemberRegistration.class
 br\com\loja\enums\StatusPedidoEnum.class
+br\com\loja\service\FabricanteBusiness.class
 br\com\loja\model\Categoria.class
 br\com\loja\model\Endereco.class
 br\com\loja\model\Cliente.class
