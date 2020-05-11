@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+</h:head>
+<h:body>
+
+	<h:form id="form">
+
+
+
+		<p:fieldset legend="Dados do Fabricante" style="margin-bottom:20px">
+			<!-- Dados do Fabricante -->
+			<p:tab title="Dados do Fabricante" disabled="false">
+				<h:panelGrid columns="2" cellpadding="4">
+
+					<p:outputLabel value="Nome Fantasia" for="nomeFantasia" />
+					<p:inputText id="nomeFantasia" size="40"
+						value="Nome fantasia da Empresa" />
+
+					<p:outputLabel value="Razão Social" for="razaoSocial" />
+					<p:inputText id="razaoSocial" size="40" value="Razão Social SA" />
+
+					<p:outputLabel value="CNPJ" for="cnpj" />
+					<p:inputNumber id="cnpj" size="15" value="92039040001" />
+
+					<p:outputLabel value="Endereço" for="endereco" />
+					<p:inputText id="endereco" size="40"
+						value="Avenida Luis Carlos Berrini n° 1000" />
+
+					<p:outputLabel value="Responsável" for="responsavel" />
+					<p:inputText id="responsavel" size="40" value="Ana Luiza da Silva" />
+
+					<p:outputLabel value="Código do Fabricante" for="codfabricante" />
+					<p:inputText id="codfabricante" size="40" value="89j4mdn*osk" />
+
+					<!-- Botão novo e salvar -->
+					<p:toolbarGroup>
+						<p:button value="Novo"></p:button>
+						<p:commandButton value="Salvar" id="botaoSalvar" ajax="false" />
+					</p:toolbarGroup>
+				</h:panelGrid>
+			</p:tab>
+		</p:fieldset>
+
+
+
+		<p:fieldset legend="Produtos do Fabricante" style="margin-bottom:20px">
+			<h:panelGrid columns="2" cellpadding="5">
+
+				<p:dataTable id="produtosTable"
+					value="" var="produto"
+					style="margin-top: 20px" emptyMessage="Nenhum produto Encontrado"
+					rows="20" paginator="true" paginatorAlwaysVisible="false"
+					paginatorPosition="bottom">
+
+					<p:column headerText="Nome"
+						style="text-align:center; width: 100px">
+						<h:outputText value="São em pó Ariel" />
+					</p:column>
+
+					<p:column headerText="Descrição">
+						<h:outputText value="O Sabão em Pó Ariel possui exclusiva tecnologia 
+						de microesferas, que possibilita a remoção de manchas secas. 
+						O produto permite uma limpeza profunda e também ajuda na economia de água. 
+						Com Ariel, você terá praticidade e tranquilidade na hora de lavar suas roupas." />
+					</p:column>
+
+					<p:column headerText="Categoria">
+						<h:outputText value="Produtos de Limpeza" />
+					</p:column>
+
+
+					<p:column headerText="Código do Fabricante"
+						style="text-align: center; with: 120px;">
+						<h:outputText value="89j4mdn*osk" />
+					</p:column>
+
+					<p:column headerText="Status" style="width: 100px;">
+						<h:outputText value="Em estoque" />
+					</p:column>
+
+					<p:column style="text-align: center; width: 50px">
+						<p:button icon="ui-icon-pencil" title="Editar" />
+					</p:column>
+				</p:dataTable>
+
+			</h:panelGrid>
+		</p:fieldset>
+
+
+
+
+	</h:form>
+
+</h:body>
+</html>
