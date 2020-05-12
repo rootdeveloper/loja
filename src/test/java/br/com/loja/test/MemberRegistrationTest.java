@@ -10,8 +10,8 @@ import org.jboss.arquillian.junit.Arquillian;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 
+import br.com.loja.business.MemberRegistration;
 import br.com.loja.model.Member;
-import br.com.loja.service.MemberRegistration;
 
 @RunWith(Arquillian.class)
 public class MemberRegistrationTest extends AbstractTest {

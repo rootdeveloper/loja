@@ -24,9 +24,9 @@ import javax.ws.rs.WebApplicationException;
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
 
+import br.com.loja.business.MemberRegistration;
 import br.com.loja.data.MemberRepository;
 import br.com.loja.model.Member;
-import br.com.loja.service.MemberRegistration;
 
 /**
  * JAX-RS Example

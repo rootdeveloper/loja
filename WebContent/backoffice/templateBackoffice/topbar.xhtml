@@ -1,0 +1,137 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core"
+    xmlns:ui="http://java.sun.com/jsf/facelets" xmlns:p="http://primefaces.org/ui">
+
+    <div class="layout-topbar">
+        <a href="#" id="topbar-menu-button">
+            <i class="fa fa-angle-left arrow"></i>
+            <i class="fa fa-angle-up mobile"></i>
+        </a>
+
+        <div class="search-input">
+            <i class="fa fa-search icon-search"></i>
+            <input type="text"></input>
+        </div>
+
+        <h:link outcome="/backoffice/dashboard" styleClass="logo-container">
+            <p:graphicImage name="images/ecuador-logo.png" library="ecuador-layout" />
+        </h:link>
+
+        <a id="topbar-profile-menu-button" href="#">
+            <span>Jeniffer Reynolds</span>
+            <p:graphicImage name="images/avatar.png" library="ecuador-layout" styleClass="topbar-profile" />
+            <i class="fa fa-angle-down"></i>
+        </a>
+
+        <ul id="topbar-usermenu">
+            <li>
+                <a href="#">
+                    <i class="fa fa-fw fa-user"></i>
+                    <span class="topbar-item-name">Profile</span>
+                    <span class="topbar-submenuitem-badge">4</span>
+                </a>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-fw fa-cog"></i>
+                    <span class="topbar-item-name">Settings</span>
+                    <span class="topbar-submenuitem-badge">2</span>
+                </a>
+                <ul>
+                    <li role="menuitem">
+                        <a href="#">
+                            <i class="fa fa-fw fa-paint-brush"></i>
+                            <span>Change</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a href="#">
+                            <i class="fa fa-fw fa-star-o"></i>
+                            <span>Favorites</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a href="#">
+                            <i class="fa fa-fw fa-lock"></i>
+                            <span>Lock Screen</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a href="#">
+                            <i class="fa fa-fw fa-picture-o"></i>
+                            <span>Wallpaper</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-fw fa-envelope-o"></i>
+                    <span class="topbar-item-name">Messages</span>
+                </a>
+                <ul>
+                    <li role="menuitem">
+                        <a href="#" class="topbar-message">
+                            <p:graphicImage name="images/avatar-brooke.png" library="ecuador-layout" width="25"/>
+                            <span>Give me a call</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a href="#" class="topbar-message">
+                            <p:graphicImage name="images/avatar-tom.png" library="ecuador-layout" width="25"/>
+                            <span>Reports attached</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a href="#" class="topbar-message">
+                            <p:graphicImage name="images/avatar-maggie.png" library="ecuador-layout" width="25"/>
+                            <span>About your invoice</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a href="#" class="topbar-message">
+                            <p:graphicImage name="images/avatar-lucas.png" library="ecuador-layout" width="25"/>
+                            <span>Meeting today</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+            <li>
+                <a href="#">
+                    <i class="fa fa-fw fa-bell-o"></i>
+                    <span class="topbar-item-name">Notifications</span>
+                </a>
+                <ul>
+                    <li role="menuitem">
+                        <a href="#">
+                            <i class="fa fa-fw fa-tasks"></i>
+                            <span>Pending tasks</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a href="#">
+                            <i class="fa fa-fw fa-calendar-check-o"></i>
+                            <span>Meeting today</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a href="#">
+                            <i class="fa fa-fw fa-download"></i>
+                            <span>Download</span>
+                        </a>
+                    </li>
+                    <li role="menuitem">
+                        <a href="#">
+                            <i class="fa fa-fw fa-plane"></i>
+                            <span>Book flight</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+
+        <a href="#" id="right-panel-button">
+            <i class="fa fa-angle-double-left"></i>
+        </a>
+    </div>
+
+</ui:composition>

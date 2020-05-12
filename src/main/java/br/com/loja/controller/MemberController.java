@@ -8,8 +8,8 @@ import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 import javax.inject.Named;
 
+import br.com.loja.business.MemberRegistration;
 import br.com.loja.model.Member;
-import br.com.loja.service.MemberRegistration;
 
 // The @Model stereotype is a convenience mechanism to make this a request-scoped bean that has an
 // EL name

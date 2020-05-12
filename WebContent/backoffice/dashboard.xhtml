@@ -1,0 +1,624 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+                xmlns:h="http://java.sun.com/jsf/html"
+                xmlns:f="http://java.sun.com/jsf/core"
+                xmlns:ui="http://java.sun.com/jsf/facelets"
+                xmlns:p="http://primefaces.org/ui"
+                template="/backoffice/templateBackoffice/template.xhtml">
+
+    <ui:define name="title">Dashboard</ui:define>
+
+    <ui:define name="head"></ui:define>
+    <ui:define name="viewname">
+        <li><p:link outcome="/backoffice/dashboard">Dashboard</p:link></li>
+    </ui:define>
+
+    <ui:define name="content">
+        <div class="layout-dashboard">
+            <div class="ui-g">
+                <div class="ui-g-12 ui-md-6 ui-lg-3">
+                    <div class="overview-box sales">
+                        <p:graphicImage name="images/icon-sales.png" library="ecuador-layout"  styleClass="image-icon" />
+                        <div class="overview-title">SALES</div>
+                        <div class="overview-numbers">
+                            $ 32,700
+                        </div>
+                        <div class="overview-subinfo">
+                            <div class="ui-g-6 progressbar">
+                                <div class="progress sale"></div>
+                            </div>
+                            <span class="ui-g-6">23% more</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-3">
+                    <div class="overview-box views">
+                        <p:graphicImage name="images/icon-views.png" library="ecuador-layout" style="margin-top:10px"/>
+                        <div class="overview-title">VIEWS</div>
+                        <div class="overview-numbers">
+                            21,009
+                        </div>
+                        <div class="overview-subinfo">
+                            <div class="ui-g-6 progressbar">
+                                <div class="progress view"></div>
+                            </div>
+                            <span class="ui-g-6">7% more</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-3">
+                    <div class="overview-box users">
+                        <p:graphicImage name="images/icon-users.png" library="ecuador-layout" />
+                        <div class="overview-title">USERS</div>
+                        <div class="overview-numbers">
+                            3,270
+                        </div>
+                        <div class="overview-subinfo user">
+                            <i class="fa fa-circle"></i>
+                            <span>Same</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="ui-g-12 ui-md-6 ui-lg-3">
+                    <div class="overview-box checkins">
+                        <p:graphicImage name="images/icon-checkin.png" library="ecuador-layout"  styleClass="image-icon" />
+                        <div class="overview-title">CHECK-INS</div>
+                        <div class="overview-numbers">
+                            704
+                        </div>
+                        <div class="overview-subinfo checkin">
+                            <i class="fa fa-circle"></i>
+                            <span>Same</span>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="ui-g-12 ui-md-12 ui-lg-4">
+                    <p:panel header="Contacts" styleClass="contacts">
+                        <ul>
+                            <li>
+                                <p:graphicImage name="images/avatar-brooke.png" library="ecuador-layout"/>
+                                <div class="seperator"></div>
+                                <div class="team-box">
+                                    <span class="team-member">Brooke Wright</span>
+                                    <div>
+                                        <i class="fa fa-envelope"></i>
+                                        <span class="team-member-mail">brooke@test.com</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-map-pin"></i>
+                                        <span class="team-member-address">153 Cold Valley Road</span>
+                                    </div>
+                                </div>
+                            </li>
+                            <li>
+                                <p:graphicImage name="images/avatar-maggie.png" library="ecuador-layout" />
+                                <div class="seperator"></div>
+                                <div class="team-box">
+                                    <span class="team-member">Maggie Walker</span>
+                                    <div>
+                                        <i class="fa fa-envelope"></i>
+                                        <span class="team-member-mail">maggie@test.com</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-map-pin"></i>
+                                        <span class="team-member-address">5698 Anderson Street</span>
+                                    </div>         
+                                </div>
+                            </li>
+                            <li>
+                                <p:graphicImage name="images/avatar-tom.png" library="ecuador-layout" />
+                                <div class="seperator"></div>
+                                <div class="team-box">
+                                    <span class="team-member">Tom Baker</span>
+                                    <div>
+                                        <i class="fa fa-envelope"></i>
+                                        <span class="team-member-mail">tom@example.com</span>
+                                    </div>
+                                    <div>
+                                        <i class="fa fa-map-pin"></i>
+                                        <span class="team-member-address">2304 Billy Bill Lane</span>
+                                    </div>                                   
+                                </div>
+                            </li>
+                        </ul>
+                    </p:panel>
+                </div>
+                <div class="ui-g-12 ui-md-12 ui-lg-4">
+                    <p:panel header="Tasks" styleClass="tasks">
+                        <ul>
+                            <li>
+                                <p:selectBooleanCheckbox />
+                                <span>Sales Reports</span>
+                                <div class="time-badge">
+                                    <span>TODAY</span>
+                                </div>
+                            </li>
+                            <li>
+                                <p:selectBooleanCheckbox />
+                                <span>Pay Invoices</span>
+                                <div class="time-badge">
+                                    <span>1 D</span>
+                                </div>
+                            </li>
+                            <li>
+                                <p:selectBooleanCheckbox />
+                                <span>Jenny's Birthday</span>
+                                <div class="time-badge">
+                                    <span>1 D</span>
+                                </div>
+                            </li>
+                            <li>
+                                <p:selectBooleanCheckbox />
+                                <span>Client Meeting</span>
+                                <div class="time-badge">
+                                    <span>2 D</span>
+                                </div>
+                            </li>
+                            <li>
+                                <p:selectBooleanCheckbox />
+                                <span>Flight Ticket</span>
+                                <div class="time-badge">
+                                    <span>5 D</span>
+                                </div>
+                            </li>
+                            <li>
+                                <p:selectBooleanCheckbox />
+                                <span>New Themes</span>
+                                <div class="time-badge">
+                                    <span>LATER</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </p:panel>
+                </div>
+                <div class="ui-g-12 ui-md-12 ui-lg-4">
+                    <p:panel header="Resolution Center" styleClass="resolution-center">
+                        <p:inputText placeholder="Name"/>
+    
+                        <p:selectOneMenu id="console" value="#{selectOneMenuView.console}">
+                            <f:selectItem itemLabel="Select One" itemValue="" />
+                            <f:selectItem itemLabel="Emails" itemValue="Emails" />
+                            <f:selectItem itemLabel="System" itemValue="System" />
+                            <f:selectItem itemLabel="Billing" itemValue="Billing" />
+                        </p:selectOneMenu>
+
+                        <p:inputTextarea rows="3" placeholder="Your Message" autoResize="false"/>
+    
+                        <p:commandButton type="button" value="Send" />
+                    </p:panel>
+                </div>  
+
+                <div class="ui-g-12 ui-md-12 ui-lg-12 ui-xl-6">
+                    <p:panel header="Statistics" styleClass="statistics ui-g">
+                        <div class="ui-g-12 ui-md-6 ui-lg-6 ui-xl-6 left-side">
+                            <i class="fa fa-level-up"></i>
+                            <span class="icon-label">Raised</span>
+                            <span>$ 85,397</span>
+                            <div class="statsbar">
+                                <div class="statsbar-value" style="width: 50%"></div>
+                            </div>
+                            <i class="fa fa-usd"></i>
+                            <span class="icon-label">Current Period Price</span>
+                            <span>$ 194</span>
+                            <div class="statsbar">
+                                <div class="statsbar-value" style="width: 75%"></div>
+                            </div>
+                            <i class="fa fa-history"></i>
+                            <span class="icon-label">Remaining</span>
+                            <span>16:01:53</span>
+                            <div class="statsbar">
+                                <div class="statsbar-value" style="width: 25%"></div>
+                            </div>
+                        </div>
+                        <div class="ui-g-12 ui-md-6 ui-lg-6 ui-xl-6 right-side">
+                            <div>
+                                <i class="fa fa-level-up"></i>
+                                <span>50%</span>
+                                <i class="fa fa-usd"></i>
+                                <span>75%</span>
+                                <i class="fa fa-history"></i>
+                                <span>25%</span>
+                            </div>
+                            <div class="knob-container">
+                                <div class="knob">81%</div>
+                            </div>
+                            <div class="details">
+                                <span>See Details</span>
+                                <i class="fa fa-chevron-right"></i>
+                            </div>
+                        </div>
+                    </p:panel>
+                </div>
+                <div class="ui-g-12 ui-md-12 ui-lg-12 ui-xl-6">
+                    <p:panel header="Global Sales" styleClass="global-sales">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th></th>
+                                    <th class="country">Country</th>
+                                    <th>Total</th>
+                                    <th>Percentage</th>
+                                    <th>Change</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td class="country">
+                                        <p:graphicImage name="images/flag-usa.png" library="ecuador-layout" />
+                                        <span>USA</span>
+                                    </td>
+                                    <td>91,382 $</td>
+                                    <td>71%</td>
+                                    <td>
+                                        <i class="fa fa-caret-up up" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td class="country">
+                                        <p:graphicImage name="images/flag-brasil.png" library="ecuador-layout" />
+                                        <span>Brasil</span>
+                                    </td>
+                                    <td>1,902 $</td>
+                                    <td>9%</td>
+                                    <td>
+                                        <i class="fa fa-caret-down down" />
+                                    </td>
+                                </tr>
+                                <tr>                                    
+                                    <td>3</td>
+                                    <td class="country">
+                                        <p:graphicImage name="images/flag-india.png" library="ecuador-layout" />
+                                        <span>India</span>
+                                    </td>
+                                    <td>3,418 $</td>
+                                    <td>19%</td>
+                                    <td>
+                                        <i class="fa fa-caret-down down" />
+                                    </td>
+                                </tr>
+                                <tr>                                    
+                                    <td>4</td>
+                                    <td class="country">
+                                        <p:graphicImage name="images/flag-germany.png" library="ecuador-layout" />
+                                        <span>Germany</span>
+                                    </td>
+                                    <td>74,293 $</td>
+                                    <td>62%</td>
+                                    <td>
+                                        <i class="fa fa-caret-up up" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td class="country">
+                                        <p:graphicImage name="images/flag-spain.png" library="ecuador-layout" />
+                                        <span>Spain</span>
+                                    </td>
+                                    <td>32,849 $</td>
+                                    <td>28%</td>
+                                    <td>
+                                        <i class="fa fa-caret-down down" />
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>6</td>
+                                    <td class="country">
+                                        <p:graphicImage name="images/flag-france.png" library="ecuador-layout" />
+                                        <span>France</span>
+                                    </td>
+                                    <td>40,619 $</td>
+                                    <td>34%</td>
+                                    <td>
+                                        <i class="fa fa-caret-up up" />
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </p:panel>
+                </div>
+
+                <div class="ui-g-12 ui-md-12 ui-lg-4">
+                    <p:panel styleClass="profile">
+                        <div class="bg-image">
+                        </div>
+                        <div class="profile-info">
+                                <p:graphicImage name="images/avatar-jeniffer.png" library="ecuador-layout" class="profile-image"/>
+
+                            <span class="name">Jeniffer Reynolds</span>
+                            <div>
+                                <i class="fa fa-briefcase"></i>
+                                <span class="job">Human Resource Manager</span>
+                            </div>
+                            <div>
+                                <i class="fa fa-location-arrow"></i>
+                                <span class="location">Seattle</span>
+                            </div>
+                            <div>
+                                <div class="profile-numbers">
+                                    <span class="header">Views</span>
+                                    <span class="number">381</span>
+                                </div>
+                                <div class="profile-numbers">
+                                    <span class="header">Followers</span>
+                                    <span class="number">492</span>
+                                </div>
+                                <div class="profile-numbers">
+                                    <span class="header">Likes</span>
+                                    <span class="number">1,395</span>
+                                </div>
+                            </div>
+                        </div>
+                    </p:panel>
+                        
+                    <p:panel header="Account Timeline" styleClass="timeline">
+                        <ul>
+                            <li>
+                                <div class="date-indicator">
+                                    <span class="date">today</span>
+                                    <span class="time">08:32</span>
+                                </div>
+                                <div class="activity-link"></div>
+                                <i class="fa fa-circle success"></i>
+                                <div class="timeline-subject">
+                                    <span class="timeline-header">Login to system</span>
+                                    <span class="timeline-subheader">automatic login</span>
+                                </div>
+                                <i class="fa fa-laptop device success"></i>
+                            </li>
+                            <li>
+                                <div class="date-indicator">
+                                    <span class="date">today</span>
+                                    <span class="time">00:07</span>
+                                </div>
+                                <div class="activity-link"></div>
+                                <i class="fa fa-circle success"></i>
+                                <div class="timeline-subject">
+                                    <span class="timeline-header">Login to system</span>
+                                    <span class="timeline-subheader">automatic login</span>
+                                </div>
+                                <i class="fa fa-tablet device success"></i>
+                            </li>
+                            <li>
+                                <div class="date-indicator">
+                                    <span class="date">1 d</span>
+                                    <span class="time">13:37</span>
+                                </div>
+                                <div class="activity-link"></div>
+                                <i class="fa fa-circle error"></i>
+                                <div class="timeline-subject">
+                                    <span class="timeline-header">Usename error</span>
+                                    <span class="timeline-subheader">changed username</span>
+                                </div>
+                                <i class="fa fa-laptop device error"></i>
+                            </li>
+                            <li>
+                                <div class="date-indicator">
+                                    <span class="date">1 d</span>
+                                    <span class="time">08:30</span>
+                                </div>
+                                <div class="activity-link"></div>
+                                <i class="fa fa-circle success"></i>
+                                <div class="timeline-subject">
+                                    <span class="timeline-header">Login to system</span>
+                                    <span class="timeline-subheader">manual login</span>
+                                </div>
+                                <i class="fa fa-laptop device success"></i>
+                            </li>
+                            <li>
+                                <div class="date-indicator">
+                                    <span class="date">2 d</span>
+                                    <span class="time">13:41</span>
+                                </div>
+                                <div class="activity-link"></div>
+                                <i class="fa fa-circle success"></i>
+                                <div class="timeline-subject">
+                                    <span class="timeline-header">Login to system</span>
+                                    <span class="timeline-subheader">automatic login</span>
+                                </div>
+                                <i class="fa fa-laptop device success"></i>
+                            </li>
+                            <li>
+                                <div class="date-indicator">
+                                    <span class="date">2 d</span>
+                                    <span class="time">09:03</span>
+                                </div>
+                                <div class="activity-link"></div>
+                                <i class="fa fa-circle error"></i>
+                                <div class="timeline-subject">
+                                    <span class="timeline-header">Incorrect password</span>
+                                    <span class="timeline-subheader">access denied</span>
+                                </div>
+                                <i class="fa fa-mobile device error"></i>
+                            </li>
+                            <li>
+                                <div class="date-indicator">
+                                    <span class="date">3 d</span>
+                                    <span class="time">23:48</span>
+                                </div>
+                                <div class="activity-link"></div>
+                                <i class="fa fa-circle success"></i>
+                                <div class="timeline-subject">
+                                    <span class="timeline-header">Login to system</span>
+                                    <span class="timeline-subheader">retina scan</span>
+                                </div>
+                                <i class="fa fa-mobile device success"></i>
+                            </li>
+                            <li>
+                                <div class="date-indicator">
+                                    <span class="date">3 d</span>
+                                    <span class="time">13:33</span>
+                                </div>
+                                <div class="activity-link"></div>
+                                <i class="fa fa-circle code"></i>
+                                <div class="timeline-subject">
+                                    <span class="timeline-header">Exceptional error</span>
+                                    <span class="timeline-subheader">Code 2ff26982284</span>
+                                </div>
+                                <i class="fa fa-laptop device code"></i>
+                            </li>
+                            <li>
+                                <div class="date-indicator">
+                                    <span class="date">13 d</span>
+                                    <span class="time">08:39</span>
+                                </div>
+                                <div class="activity-link"></div>
+                                <i class="fa fa-circle success"></i>
+                                <div class="timeline-subject">
+                                    <span class="timeline-header">Login to system</span>
+                                    <span class="timeline-subheader">automatic login</span>
+                                </div>
+                                <i class="fa fa-laptop device success"></i>
+                            </li>
+                        </ul>
+                    </p:panel>
+                </div>
+                <div class="ui-g-12 ui-md-12 ui-lg-8">
+                    <p:panel header="Inbox" styleClass="inbox">
+                        <ul>
+                            <li>
+                                <div class="image-container">
+                                    <p:graphicImage name="images/avatar-maggie.png" library="ecuador-layout" />
+                                </div>
+                                <div class="seperator"></div>
+                                <div class="message-box">
+                                    <span class="messager">Maggie Walker</span>
+                                    <span class="time">23 mins</span>   
+                                    <span class="message">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribu…</span>       
+                                </div>
+                                <div class="message-status">
+                                    <i class="fa fa-circle"></i>
+                                    <span>562</span>
+                                </div>    
+                            </li>
+                            <li>
+                                <div class="image-container">
+                                    <p:graphicImage name="images/avatar-brooke.png" library="ecuador-layout" />
+                                </div>
+                                <div class="seperator"></div>
+                                <div class="message-box">
+                                    <span class="messager">Brooke Wright</span>
+                                    <span class="time">5 hours</span>   
+                                    <span class="message">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</span>       
+                                </div>
+                                <div class="message-status">
+                                    <i class="fa fa-circle"></i>
+                                    <span>149</span>
+                                </div>
+                            </li>               
+                            <li>
+                                <div class="image-container">
+                                    <p:graphicImage name="images/avatar-tom.png" library="ecuador-layout" />
+                                </div>
+                                <div class="seperator"></div>
+                                <div class="message-box">
+                                    <span class="messager">Tom Baker</span>
+                                    <span class="time">19 hours</span>   
+                                    <span class="message">It is a long established fact that a reader will be distracted by the readable content.</span>       
+                                </div>
+                                <div class="message-status">
+                                    <i class="fa fa-circle unread"></i>
+                                    <span>74</span>
+                                </div>
+                            </li>
+                            <li>
+                                <div class="image-container">
+                                    <p:graphicImage name="images/avatar-lucas.png" library="ecuador-layout" />
+                                </div>
+                                <div class="seperator"></div>
+                                <div class="message-box">
+                                    <span class="messager">Lucas Fox</span>
+                                    <span class="time">1 day</span>   
+                                    <span class="message">It is a long established fact that a reader will be distracted by the readable contentof a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal.</span>       
+                                </div>
+                                <div class="message-status">
+                                    <i class="fa fa-circle unread"></i>
+                                    <span>250</span>
+                                </div>
+                            </li>
+                        </ul>
+                    </p:panel>
+
+                    <p:panel header="Projects" styleClass="projects">
+                            <ul>
+                                <li> 
+                                    <div class="project-info">
+                                        <span class="project-name">Morpheus</span>
+                                        <span class="project-firm">PrimeFaces</span>
+                                    </div>
+                                    <div class="person-container">
+                                        <div class="persons">
+                                            <p:graphicImage name="images/faces-morpheus.png" library="ecuador-layout"/>
+                                        </div>
+                                        <span>24 people interested</span>
+                                    </div>
+                                    <div class="button">
+                                        <p:commandButton type="button" value="See Details"/>
+                                    </div>                            
+                                </li>
+                                <li> 
+                                    <div class="project-info">
+                                        <span class="project-name">Ultima</span>
+                                        <span class="project-firm">PrimeFaces</span>
+                                    </div>
+                                    <div class="person-container">
+                                        <div class="persons">
+                                            <p:graphicImage name="images/faces-ultima.png" library="ecuador-layout"/>
+                                        </div>
+                                        <span>32 people interested</span>
+                                    </div>
+                                    <div class="button">
+                                        <p:commandButton type="button" value="See Details"/>
+                                    </div>                            
+                                </li>
+                                <li> 
+                                    <div class="project-info">
+                                        <span class="project-name">Poseidon</span>
+                                        <span class="project-firm">PrimeFaces</span>
+                                    </div>
+                                    <div class="person-container">
+                                        <div class="persons">
+                                            <p:graphicImage name="images/faces-poseidon.png" library="ecuador-layout"/>
+                                        </div>
+                                        <span>37 people interested</span>
+                                    </div>
+                                    <div class="button">
+                                        <p:commandButton type="button" value="See Details"/>
+                                    </div>
+                                </li>
+                            </ul>
+                        </p:panel>
+    
+                        <p:panel header="Inventory" styleClass="table">
+                            <p:dataTable var="car" value="#{dtSelectionView.cars6}" selectionMode="single" reflow="true" selection="#{dtSelectionView.selectedCar}"
+                            rowKey="#{car.id}" paginator="true" rows="10">
+                                <p:column headerText="ID" sortBy="#{car.id}">
+                                    <h:outputText value="#{car.id}" />
+                                </p:column>
+        
+                                <p:column headerText="Year" sortBy="#{car.year}">
+                                    <h:outputText value="#{car.year}" />
+                                </p:column>
+        
+                                <p:column headerText="Brand" sortBy="#{car.brand}">
+                                    <h:outputText value="#{car.brand}" />
+                                </p:column>
+        
+                                <p:column headerText="Color" sortBy="#{car.color}">
+                                    <h:outputText value="#{car.color}" />
+                                </p:column>
+                            </p:dataTable>
+                        </p:panel>
+                </div>
+
+                <div class="ui-g-12 ui-md-12 ui-lg-12">
+                    <p:panel header="Upcoming Events" style="height:100%">
+                        <p:schedule value="#{scheduleJava8View.eventModel}"/>
+                    </p:panel>
+                </div>
+            </div>
+        </div>
+    </ui:define>
+
+</ui:composition>

@@ -17,7 +17,7 @@ public class AbstractTest {
  						"br.com.loja.enums",
  						"br.com.loja.model",
  						"br.com.loja.rest",
- 						"br.com.loja.service",
+ 						"br.com.loja.business",
  						"br.com.loja.util",
  						"br.com.loja.test"
 						)

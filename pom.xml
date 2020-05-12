@@ -4,7 +4,7 @@
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>loja</groupId>
 	<artifactId>loja</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.2-SNAPSHOT</version>
 	<packaging>war</packaging>
 
 	<properties>
@@ -41,6 +41,22 @@
 			<artifactId>primefaces</artifactId>
 			<version>8.0</version>
 		</dependency>
+		
+		<!-- PRIMEFACES layout configuration begin -->
+		
+		<dependency>
+            <groupId>javax.el</groupId>
+            <artifactId>javax.el-api</artifactId>
+            <version>3.0.0</version>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>javax.servlet-api</artifactId>
+            <version>3.1.0</version>
+            <scope>provided</scope>
+        </dependency>
+		<!-- PRIMEFACES layout configuration end -->
 
 		<!-- Needed for running tests (you may also use TestNG) -->
 		<dependency>
@@ -61,7 +77,7 @@
 	</dependencies>
 
 	<build>
-		<!-- Maven will append the version to the finalName (which is the name 
+		<!-- Maven will NOT append the version to the finalName (which is the name 
 			given to the generated war, and hence the context root) -->
 		<finalName>${project.artifactId}</finalName>
 		<plugins>
