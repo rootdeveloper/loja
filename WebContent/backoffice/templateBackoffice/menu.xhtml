@@ -12,6 +12,7 @@
                     <div class="layout-menu-title">MAIN MENU</div>
                     <pe:menu widgetVar="me">
                         <p:menuitem id="om_dashboard" value="Dashboard" icon="fa fa-fw fa-dashboard" outcome="/backoffice/dashboard" />
+                        <p:menuitem id="entregador" value="Entregadores" icon="fa fa-fw fa-truck" outcome="/backoffice/entregadores/entregadores.xhtml"/>
                         <p:submenu id="om_customization_mode" label="Menu Colors" icon="fa fa-fw fa-cog">
                             <p:menuitem id="om_customization_mode_1" value="Light" icon="fa fa-fw fa-paint-brush" actionListener="#{guestPreferences.setLightMenu(true)}" ajax="false" />
                             <p:menuitem id="om_customization_mode_2" value="Dark" icon="fa fa-fw fa-paint-brush" actionListener="#{guestPreferences.setLightMenu(false)}" ajax="false" />

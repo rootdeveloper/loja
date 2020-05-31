@@ -1,0 +1,154 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/backoffice/templateBackoffice/template.xhtml">
+
+	<ui:define name="head">
+		<style type="text/css">
+.ui-dataview-list .ui-dataview-row {
+	border-bottom: 1px solid #A8A8A8;
+	padding: 25px 10px;
+	/* with the exported variables from Nova and Luna Themes*/
+	border-bottom-color: var(- -input-border-color, #A8A8A8);
+}
+
+.logo {
+	width: 5%;
+}
+
+.detail {
+	width: 85%;
+	padding-left: 25px;
+}
+
+@media ( max-width :640px) {
+	.entregadores-datalist .text-column {
+		text-align: center;
+	}
+	.ui-tree {
+		width: 100%;
+	}
+}
+</style>
+	</ui:define>
+
+	<ui:define name="title">Entregadores</ui:define>
+
+	<ui:define name="viewname">
+		<li><p:link outcome="/backoffice/entregadores/entregadores.xhtml">Entregadores</p:link></li>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form id="form">
+			<div class="ui-g ui-fluid">
+				<div class="ui-g-12">
+					<div class="card card-w-title">
+						<h1>ENTREGADORES CADASTRADOS</h1>
+						<p:dataView value="#{entregadorDataView.entregadores}"
+							var="entregador" paginator="true" rowsPerPageTemplate="5,10,15"
+							pageLinks="5" paginatorAlwaysVisible="false"
+							paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
+							rows="5" listIcon="fa fa-fw fa-bars"
+							gridIcon="fa fa-fw fa-th-large">
+
+							<p:dataViewListItem>
+								<h:panelGrid columns="3" style="width:100%"
+									columnClasses="logo,detail">
+									<p:graphicImage value="img/#{entregador.logo}.png" />
+
+									<p:outputPanel>
+										<h:panelGrid columns="2" cellpadding="5">
+											<h:outputText value="Empresa:" />
+											<h:outputText value="#{entregador.empresa}"
+												style="font-weight: bold" />
+
+											<h:outputText value="Cidade:" />
+											<h:outputText value="#{entregador.cidade}"
+												style="font-weight: bold" />
+
+											<h:outputText value="E-mail:" />
+											<h:outputText value="#{entregador.email}"
+												style="font-weight: bold" />
+										</h:panelGrid>
+									</p:outputPanel>
+
+									<p:commandLink update=":form:entregadorDetail"
+										oncomplete="PF('entregadorDialog').show()" title="View Detail">
+										<h:outputText styleClass="ui-icon fa fa-fw fa-search"
+											style="margin:0 auto;" />
+										<f:setPropertyActionListener value="#{entregador}"
+											target="#{entregadorDataView.entregadorSelecionado}" />
+									</p:commandLink>
+								</h:panelGrid>
+							</p:dataViewListItem>
+
+
+							<p:dataViewGridItem>
+								<p:panel header="#{entregador.empresa}"
+									style="text-align:center">
+									<h:panelGrid columns="1" style="width:100%">
+										<p:graphicImage value="img/#{entregador.logo}.png" />
+
+										<h:outputText value="#{entregador.email}" />
+
+										<p:commandLink update=":form:entregadorDetail"
+											oncomplete="PF('entregadorDialog').show()"
+											title="View Detail">
+											<h:outputText styleClass="ui-icon fa fa-fw fa-search"
+												style="margin:0 auto;" />
+											<f:setPropertyActionListener value="#{entregador}"
+												target="#{entregadorDataView.entregadorSelecionado}" />
+										</p:commandLink>
+									</h:panelGrid>
+								</p:panel>
+							</p:dataViewGridItem>
+
+						</p:dataView>
+						<p:dialog header="Entregador Info" widgetVar="entregadorDialog"
+							responsive="true" modal="true" showEffect="fold"
+							hideEffect="fold" resizable="false" closeOnEscape="true">
+							<p:outputPanel id="entregadorDetail" style="text-align:center;">
+								<p:panelGrid columns="2"
+									rendered="#{not empty entregadorDataView.entregadorSelecionado}"
+									columnClasses="label,value">
+									<f:facet name="header">
+										<p:graphicImage
+											value="img/#{entregadorDataView.entregadorSelecionado.logo}.png" />
+									</f:facet>
+
+									<h:outputText value="CNPJ" />
+									<h:outputText
+										value="#{entregadorDataView.entregadorSelecionado.cnpj}" />
+
+									<h:outputText value="Empresa:" />
+									<h:outputText
+										value="#{entregadorDataView.entregadorSelecionado.empresa}" />
+
+									<h:outputText value="Responsável" />
+									<h:outputText
+										value="#{entregadorDataView.entregadorSelecionado.responsavel}" />
+
+									<h:outputText value="E-mail" />
+									<h:outputText
+										value="#{entregadorDataView.entregadorSelecionado.email}" />
+
+									<h:outputText value="Cidade" />
+									<h:outputText
+										value="#{entregadorDataView.entregadorSelecionado.cidade}" />
+
+									<h:outputText value="Telefone:" />
+									<h:outputText
+										value="#{entregadorDataView.entregadorSelecionado.telefone}" />
+
+								</p:panelGrid>
+							</p:outputPanel>
+						</p:dialog>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
