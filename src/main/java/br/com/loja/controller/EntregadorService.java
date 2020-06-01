@@ -21,7 +21,7 @@ public class EntregadorService {
 
 	static {
 		empresas = getListaEmpresas();
-		cidades = getListaCidades();
+		cidades = getArrayCidades();
 		emails = getListaEmails();
 		responsaveis = getListaResponsaveis();
 	}
@@ -35,6 +35,21 @@ public class EntregadorService {
 		}
 
 		return entregadores;
+	}
+	
+	public List<String> getListaCidades() {	
+		List<String> cidades = new ArrayList<>();
+		cidades.add("Belo Horizonte - MG");
+		cidades.add("Campo Grande - MS");
+		cidades.add("Cuiabá - MT");
+		cidades.add("Curitiba - PR");
+		cidades.add("Florianópolis - SC");
+		cidades.add("Porto Alegre - RS");
+		cidades.add("Rio de Janeiro - RJ");
+		cidades.add("São Luís - MA");
+		cidades.add("São Paulo - SP");
+		cidades.add("Vitória - ES");
+		return cidades;
 	}
 
 	private static String[] getListaEmpresas() {
@@ -53,7 +68,7 @@ public class EntregadorService {
 		return empresas;
 	}
 	
-	private static String[] getListaCidades() {
+	private static String[] getArrayCidades() {
 		String[] cidades = new String[10];
 		cidades[0] = "São Paulo - SP";
 		cidades[1] = "Rio de Janeiro - RJ";

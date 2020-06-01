@@ -19,6 +19,7 @@ public class EntregadorDataView implements Serializable {
 	private static final long serialVersionUID = 1L;
 
 	private List<EntregadorBean> entregadores;
+	private List<String> cidades;
     
     private EntregadorBean entregadorSelecionado;
     
@@ -28,14 +29,23 @@ public class EntregadorDataView implements Serializable {
     @PostConstruct
     public void init() {
         setEntregadores(service.createEntregadores(50));
+        setCidades(service.getListaCidades());
     }
     
 	public List<EntregadorBean> getEntregadores() {
 		return entregadores;
 	}
-
+	
 	public void setEntregadores(List<EntregadorBean> entregadores) {
 		this.entregadores = entregadores;
+	}
+	
+	public List<String> getCidades() {
+		return cidades;
+	}
+	
+	public void setCidades(List<String> cidades) {
+		this.cidades = cidades;
 	}
 
     public EntregadorBean getEntregadorSelecionado() {
