@@ -2,7 +2,7 @@ package br.com.loja.controller;
 
 import java.io.Serializable;
 
-public class EntregadorBean implements Serializable {
+public class EntregadorController implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
@@ -14,10 +14,10 @@ public class EntregadorBean implements Serializable {
 	public String telefone;
 	public String logo;
 
-	public EntregadorBean() {
+	public EntregadorController() {
 	}
 
-	public EntregadorBean(String cnpj, String empresa, String responsavel, String email, String cidade, String telefone,
+	public EntregadorController(String cnpj, String empresa, String responsavel, String email, String cidade, String telefone,
 			String logo) {
 		
 		super();

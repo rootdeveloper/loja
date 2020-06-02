@@ -1,4 +1,4 @@
-package br.com.loja.controller;
+package br.com.loja.data;
 
 import java.io.Serializable;
 import java.util.List;
@@ -12,16 +12,18 @@ import javax.inject.Named;
 
 import org.primefaces.PrimeFaces;
 
+import br.com.loja.controller.EntregadorController;
+
 @Named
 @SessionScoped
 public class EntregadorDataView implements Serializable {
 
 	private static final long serialVersionUID = 1L;
 
-	private List<EntregadorBean> entregadores;
+	private List<EntregadorController> entregadores;
 	private List<String> cidades;
     
-    private EntregadorBean entregadorSelecionado;
+    private EntregadorController entregadorSelecionado;
     
     @Inject
     private EntregadorService service;
@@ -29,14 +31,14 @@ public class EntregadorDataView implements Serializable {
     @PostConstruct
     public void init() {
         setEntregadores(service.createEntregadores(50));
-        setCidades(service.getListaCidades());
+        setCidades(service.getCidades());
     }
     
-	public List<EntregadorBean> getEntregadores() {
+	public List<EntregadorController> getEntregadores() {
 		return entregadores;
 	}
 	
-	public void setEntregadores(List<EntregadorBean> entregadores) {
+	public void setEntregadores(List<EntregadorController> entregadores) {
 		this.entregadores = entregadores;
 	}
 	
@@ -48,11 +50,11 @@ public class EntregadorDataView implements Serializable {
 		this.cidades = cidades;
 	}
 
-    public EntregadorBean getEntregadorSelecionado() {
+    public EntregadorController getEntregadorSelecionado() {
         return entregadorSelecionado;
     }
 
-    public void setEntregadorSelecionado(EntregadorBean selectedCar) {
+    public void setEntregadorSelecionado(EntregadorController selectedCar) {
         this.entregadorSelecionado = selectedCar;
     }
 
