@@ -1,0 +1,77 @@
+<ui:composition xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui"
+	template="/backoffice/templateBackoffice/template.xhtml">
+
+	<ui:define name="title">Cadastrar Entregador</ui:define>
+	<ui:define name="viewname">
+		<li>Entregadores</li>
+		<li>/</li>
+		<li><p:link outcome="/backoffice/entregadores/entregadores-form.xhtml">Cadastrar Entregador</p:link></li>
+	</ui:define>
+
+	<ui:define name="content">
+		<h:form id="form">
+			<div class="ui-fluid">
+				<div class="ui-g">
+					<div class="ui-g-12">
+						<div class="card card-w-title">
+							<h1 style="font-weight: bold;">Cadastro de Entregador</h1>
+     
+							<div style="width: 10%; margin: 0 0 10px 30px;">
+								<p:outputLabel value="CNPJ:" style="margin: 5px; font-weight: bold;" />
+								<p:inputMask id="cnpj" mask="99.999.999/9999-99" placeholder="00.000.000/0000-00" required="true" style="margin: 5px 0; padding: 10px; text-align: center" />
+								<p:message for="cnpj" display="icon" />							
+							</div>
+							
+							<div style="width: 25%; margin: 0 0 10px 30px;">
+								<p:outputLabel value="Empresa:" style="margin: 5px; font-weight: bold;" />
+								<p:inputText id="empresa" placeholder="Nome Fantasia da Empresa" required="true" style="margin: 5px 0; padding: 10px;" />
+							</div>
+
+							<div style="width: 25%; margin: 0 0 10px 30px;">
+								<p:outputLabel value="Responsável:" style="margin: 5px; font-weight: bold;" />
+								<p:inputText id="responsavel" placeholder="Nome do Responsável" required="true" style="margin: 5px 0; padding: 10px;" />
+							</div>
+
+							<div style="width: 15%; margin: 0 0 10px 30px;">
+								<p:outputLabel value="Cidade:" style="margin: 5px; font-weight: bold;" />
+								<p:selectOneMenu id="localizacao" style="margin: 5px 0; padding: 5px;" value="#{entregadorForm.cidadeSelecionada}">
+									<f:selectItem itemLabel="Selecione uma cidade" itemValue="" />
+									<f:selectItems value="#{entregadorForm.cidades}" />
+									<p:ajax update="ddd"/>
+								</p:selectOneMenu>
+							</div>
+							
+							<div style="margin: 0 0 0px 30px;">
+								<p:outputLabel value="Telefone:" style="margin: 5px; font-weight: bold;" />
+							</div>
+							
+							<p:panelGrid>
+								<p:row style="margin: 0;">
+									<p:column style="margin: 0; padding: 0 3px 0 0; width: 12%; border: none">
+										<h:outputText id="ddd" value="#{entregadorForm.ddd}"/>
+									</p:column>
+									<p:column style="margin: 0; padding-left: 1px; width:88%; border: none"> 
+										<p:inputMask id="tel" mask="99999-9999" placeholder="00000-0000" required="true" style="margin: 0; text-align: center; padding: 10px; width: 60%;"/>
+									</p:column>
+								</p:row>
+							</p:panelGrid>
+							
+							<div style="width: 20%; margin: 5px 0 10px 30px;">
+								<p:outputLabel value="Email:" style="margin: 5px; font-weight: bold;" />
+								<p:inputText id="email" placeholder="exemplo@empresa.com" required="true" style="margin: 5px 0; padding: 10px;" />
+								<p:keyFilter for="email" regEx="/[a-z0-9_\.\-@]/i"/>
+							</div>
+							
+							<p:commandButton id="limpar" value="Limpar" icon="fa fa-refresh" type="button" style="width: 8%; margin: 20px 10px 5px 30px; text-align: center;" />
+	                        <p:commandButton id="salvar" value="Salvar" icon="fa fa-save" type="button" style="width: 8%; margin: 20px 10px 5px 50px; text-align: center;" />
+						</div>
+					</div>
+				</div>
+			</div>
+		</h:form>
+	</ui:define>
+</ui:composition>

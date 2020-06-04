@@ -2,6 +2,9 @@ package br.com.loja.model;
 
 import java.util.List;
 
+import javax.persistence.Inheritance;
+
+@Inheritance
 public class Empresa {
 	
 	private Integer id;
