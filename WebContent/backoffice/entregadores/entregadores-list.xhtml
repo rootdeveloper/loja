@@ -47,8 +47,8 @@
 			<div class="ui-g ui-fluid">
 				<div class="ui-g-12">
 					<div class="card card-w-title">
-						<h1>ENTREGADORES CADASTRADOS</h1>
-						<p:dataView value="#{entregadorDataView.entregadores}"
+						<h1>Entregadores Cadastrados</h1>
+						<p:dataView value="#{entregadorList.entregadores}"
 							var="entregador" paginator="true" rowsPerPageTemplate="5,10,15"
 							pageLinks="5" paginatorAlwaysVisible="false"
 							paginatorTemplate="{CurrentPageReport}  {FirstPageLink} {PreviousPageLink} {PageLinks} {NextPageLink} {LastPageLink} {RowsPerPageDropdown}"
@@ -81,7 +81,7 @@
 										<h:outputText styleClass="ui-icon fa fa-fw fa-search"
 											style="margin:0 auto;" />
 										<f:setPropertyActionListener value="#{entregador}"
-											target="#{entregadorDataView.entregadorSelecionado}" />
+											target="#{entregadorList.entregadorSelecionado}" />
 									</p:commandLink>
 								</h:panelGrid>
 							</p:dataViewListItem>
@@ -101,7 +101,7 @@
 											<h:outputText styleClass="ui-icon fa fa-fw fa-search"
 												style="margin:0 auto;" />
 											<f:setPropertyActionListener value="#{entregador}"
-												target="#{entregadorDataView.entregadorSelecionado}" />
+												target="#{entregadorList.entregadorSelecionado}" />
 										</p:commandLink>
 									</h:panelGrid>
 								</p:panel>
@@ -113,36 +113,36 @@
 							hideEffect="fold" resizable="false" closeOnEscape="true">
 							<p:outputPanel id="entregadorDetail" style="text-align:center;">
 								<p:panelGrid columns="2"
-									rendered="#{not empty entregadorDataView.entregadorSelecionado}"
+									rendered="#{not empty entregadorList.entregadorSelecionado}"
 									columnClasses="label,value">
 									<f:facet name="header">
 										<p:graphicImage
-											value="img/#{entregadorDataView.entregadorSelecionado.logo}.png" />
+											value="img/#{entregadorList.entregadorSelecionado.logo}.png" />
 									</f:facet>
 
 									<h:outputText value="CNPJ" />
 									<h:outputText
-										value="#{entregadorDataView.entregadorSelecionado.cnpj}" />
+										value="#{entregadorList.entregadorSelecionado.cnpj}" />
 
 									<h:outputText value="Empresa:" />
 									<h:outputText
-										value="#{entregadorDataView.entregadorSelecionado.empresa}" />
+										value="#{entregadorList.entregadorSelecionado.empresa}" />
 
 									<h:outputText value="Responsável" />
 									<h:outputText
-										value="#{entregadorDataView.entregadorSelecionado.responsavel}" />
+										value="#{entregadorList.entregadorSelecionado.responsavel}" />
 
 									<h:outputText value="E-mail" />
 									<h:outputText
-										value="#{entregadorDataView.entregadorSelecionado.email}" />
+										value="#{entregadorList.entregadorSelecionado.email}" />
 
 									<h:outputText value="Cidade" />
 									<h:outputText
-										value="#{entregadorDataView.entregadorSelecionado.cidade}" />
+										value="#{entregadorList.entregadorSelecionado.cidade}" />
 
 									<h:outputText value="Telefone:" />
 									<h:outputText
-										value="#{entregadorDataView.entregadorSelecionado.telefone}" />
+										value="#{entregadorList.entregadorSelecionado.telefone}" />
 
 								</p:panelGrid>
 							</p:outputPanel>

@@ -13,50 +13,55 @@
 	</ui:define>
 
 	<ui:define name="content">
-		<h:form>
+		<h:form id="form">
 			<div class="ui-fluid">
 				<div class="ui-g">
 					<div class="ui-g-12">
 						<div class="card card-w-title">
-							<h1 style="font-weight: bold;">CADASTRO DE ENTREGADOR</h1>
-							
+							<h1 style="font-weight: bold;">Cadastro de Entregador</h1>
+     
 							<div style="width: 10%; margin: 0 0 10px 30px;">
-								<p:outputLabel for="cnpj" value="CNPJ:" style="margin: 5px; font-weight: bold;" />
+								<p:outputLabel value="CNPJ:" style="margin: 5px; font-weight: bold;" />
 								<p:inputMask id="cnpj" mask="99.999.999/9999-99" placeholder="00.000.000/0000-00" required="true" style="margin: 5px 0; padding: 10px; text-align: center" />
+								<p:message for="cnpj" display="icon" />							
 							</div>
 							
 							<div style="width: 25%; margin: 0 0 10px 30px;">
-								<p:outputLabel for="empresa" value="Empresa:" style="margin: 5px; font-weight: bold;" />
+								<p:outputLabel value="Empresa:" style="margin: 5px; font-weight: bold;" />
 								<p:inputText id="empresa" placeholder="Nome Fantasia da Empresa" required="true" style="margin: 5px 0; padding: 10px;" />
 							</div>
 
 							<div style="width: 25%; margin: 0 0 10px 30px;">
-								<p:outputLabel for="responsavel" value="Responsável:" style="margin: 5px; font-weight: bold;" />
+								<p:outputLabel value="Responsável:" style="margin: 5px; font-weight: bold;" />
 								<p:inputText id="responsavel" placeholder="Nome do Responsável" required="true" style="margin: 5px 0; padding: 10px;" />
 							</div>
 
 							<div style="width: 15%; margin: 0 0 10px 30px;">
-									<p:outputLabel for="localizacao" value="Cidade" style="margin: 5px; font-weight: bold;" />
-								<p:selectOneMenu id="localizacao" required="true" style="margin: 5px 0; padding: 5px;">
+								<p:outputLabel value="Cidade:" style="margin: 5px; font-weight: bold;" />
+								<p:selectOneMenu id="localizacao" style="margin: 5px 0; padding: 5px;" value="#{entregadorForm.cidadeSelecionada}">
 									<f:selectItem itemLabel="Selecione uma cidade" itemValue="" />
-									<f:selectItems value="#{entregadorDataView.cidades}" />
+									<f:selectItems value="#{entregadorForm.cidades}" />
+									<p:ajax update="ddd"/>
 								</p:selectOneMenu>
 							</div>
 							
-							<div style="width: 20%; margin: 0 0 10px 30px;">
-								<p:outputLabel for="tel" value="Telefone:" style="margin: 5px; font-weight: bold;" />
-								<div class="ui-g" >
-								<div class="ui-g-8 ui-md-2" style="margin: 0; padding: 5px 5px 5px 0;">
-									<p:inputText style="margin: 0; text-align: center; padding:10px; font-weight: bold" placeholder="(00)" disabled="true"/>
-								</div>
-								<div class="ui-g-8 ui-md-5" style="margin: 0; padding: 5px;">
-									<p:inputMask id="tel" mask="99999-9999" placeholder="00000-0000" required="true" style="margin: 0; text-align: center; padding:10px;"/>
-								</div>
-								</div>
+							<div style="margin: 0 0 0px 30px;">
+								<p:outputLabel value="Telefone:" style="margin: 5px; font-weight: bold;" />
 							</div>
 							
-							<div style="width: 20%; margin: 0 0 10px 30px;">
-								<p:outputLabel for="email" value="Email:" style="margin: 5px; font-weight: bold;" />
+							<p:panelGrid>
+								<p:row style="margin: 0;">
+									<p:column style="margin: 0; padding: 0 3px 0 0; width: 12%; border: none">
+										<h:outputText id="ddd" value="#{entregadorForm.ddd}"/>
+									</p:column>
+									<p:column style="margin: 0; padding-left: 1px; width:88%; border: none"> 
+										<p:inputMask id="tel" mask="99999-9999" placeholder="00000-0000" required="true" style="margin: 0; text-align: center; padding: 10px; width: 60%;"/>
+									</p:column>
+								</p:row>
+							</p:panelGrid>
+							
+							<div style="width: 20%; margin: 5px 0 10px 30px;">
+								<p:outputLabel value="Email:" style="margin: 5px; font-weight: bold;" />
 								<p:inputText id="email" placeholder="exemplo@empresa.com" required="true" style="margin: 5px 0; padding: 10px;" />
 								<p:keyFilter for="email" regEx="/[a-z0-9_\.\-@]/i"/>
 							</div>
